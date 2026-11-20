@@ -1,5 +1,7 @@
 # 📚 BookBinder Brasil — Livreto
 
+<img width="607" height="734" alt="Captura_de_tela_20261119_224233" src="https://github.com/user-attachments/assets/3f6861ea-7e23-4d93-843d-1791a5c994d7" />
+
 Transforma um arquivo PDF comum em cadernos prontos para encadernação artesanal (livreto).
 
 Este é um aplicativo desktop moderno, escrito em Python, com interface gráfica, que funciona **sem precisar de Java ou terminal**. É uma reimplementação do clássico *BookBinder 3.0* (originalmente feito em Java/Jython).
