@@ -1,0 +1,31 @@
+name: Build Windows EXE
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pymupdf pyinstaller pyside6
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --onefile --windowed --name "bookbinder-brasil" --add-data "icone_livreto.svg;." bookbinder_gui.py
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bookbinder-windows
+          path: dist/bookbinder-brasil.exe
